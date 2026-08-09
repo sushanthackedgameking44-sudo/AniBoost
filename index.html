@@ -4,77 +4,91 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>AniBoost — Anime Shorts SEO Generator</title>
+  <title>AniBoost — Anime Creator SEO Tools</title>
 
   <meta name="description"
-    content="AniBoost is a free SEO toolkit for anime creators. Generate YouTube Shorts titles, captions, descriptions, hashtags and hooks.">
+    content="AniBoost helps anime creators generate YouTube titles, captions, descriptions, hashtags, keywords and hooks.">
+
+  <meta name="theme-color" content="#090612">
 
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+  <!-- NAVBAR -->
   <header class="navbar">
+
     <a href="#" class="logo">
-      ⚡ AniBoost
+      <span class="logo-icon">⚡</span>
+      Ani<span>Boost</span>
     </a>
 
     <nav>
       <a href="#generator">Generator</a>
-      <a href="#tools">Tools</a>
+      <a href="#features">Features</a>
       <a href="#about">About</a>
     </nav>
 
-    <button id="themeBtn" class="theme-btn">
+    <button id="themeBtn" class="icon-btn" aria-label="Toggle theme">
       🌙
     </button>
+
   </header>
 
 
+  <!-- HERO -->
   <main>
-
-    <!-- HERO -->
 
     <section class="hero">
 
-      <div class="hero-badge">
-        ⚡ FREE CREATOR TOOL
+      <div class="badge">
+        ⚡ Built for Anime Creators
       </div>
 
       <h1>
-        Grow Your Anime Shorts
-        <br>
-        <span>With Better SEO</span>
+        Turn Your Anime Edits Into
+        <span>Better Content.</span>
       </h1>
 
-      <p>
-        Generate titles, captions, descriptions,
-        hashtags and hooks for your anime videos in seconds.
+      <p class="hero-text">
+        Generate YouTube titles, captions, descriptions,
+        hashtags, keywords and hooks in seconds.
       </p>
 
       <a href="#generator" class="hero-btn">
         Start Creating →
       </a>
 
+      <div class="hero-stats">
+        <div>
+          <strong>7+</strong>
+          <small>Creator Tools</small>
+        </div>
+
+        <div>
+          <strong>100%</strong>
+          <small>Free to Start</small>
+        </div>
+
+        <div>
+          <strong>⚡</strong>
+          <small>Instant Results</small>
+        </div>
+      </div>
+
     </section>
 
 
     <!-- GENERATOR -->
-
     <section id="generator" class="generator-section">
 
       <div class="section-heading">
-
-        <span>01</span>
-
-        <div>
-          <h2>Anime SEO Generator</h2>
-
-          <p>
-            Enter your video details and create optimized content.
-          </p>
-        </div>
-
+        <span>CREATE</span>
+        <h2>Anime SEO Generator</h2>
+        <p>
+          Enter your video details and generate content ideas instantly.
+        </p>
       </div>
 
 
@@ -83,34 +97,402 @@
         <div class="form-grid">
 
           <div class="input-group">
-
-            <label for="anime">
-              Anime Name
-            </label>
+            <label for="anime">Anime Name</label>
 
             <input
               id="anime"
               type="text"
               placeholder="e.g. Naruto"
-            >
-
+              autocomplete="off">
           </div>
 
 
           <div class="input-group">
-
-            <label for="character">
-              Character
-            </label>
+            <label for="character">Character</label>
 
             <input
               id="character"
               type="text"
               placeholder="e.g. Obito Uchiha"
-            >
+              autocomplete="off">
+          </div>
+
+
+          <div class="input-group">
+            <label for="theme">Theme</label>
+
+            <select id="theme">
+
+              <option value="emotional">
+                Emotional
+              </option>
+
+              <option value="action">
+                Action
+              </option>
+
+              <option value="sad">
+                Sad
+              </option>
+
+              <option value="motivational">
+                Motivational
+              </option>
+
+              <option value="funny">
+                Funny
+              </option>
+
+              <option value="romantic">
+                Romantic
+              </option>
+
+            </select>
+          </div>
+
+
+          <div class="input-group">
+            <label for="language">Language</label>
+
+            <select id="language">
+
+              <option value="English">
+                English
+              </option>
+
+              <option value="Hindi">
+                Hindi
+              </option>
+
+              <option value="Nepali">
+                Nepali
+              </option>
+
+              <option value="Hinglish">
+                Hinglish
+              </option>
+
+            </select>
+          </div>
+
+        </div>
+
+
+        <div id="error" class="error"></div>
+
+        <button id="generateBtn" class="generate-btn">
+          ⚡ Generate SEO
+        </button>
+
+        <p class="privacy-note">
+          🔒 Your information stays in your browser.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- RESULTS -->
+    <section id="results" class="results hidden">
+
+      <div class="section-heading">
+        <span>RESULTS</span>
+        <h2>Your Content Pack</h2>
+        <p>Ready-to-use ideas for your next upload.</p>
+      </div>
+
+
+      <div class="results-grid">
+
+
+        <!-- TITLES -->
+        <article class="result-card">
+
+          <div class="result-header">
+            <div>
+              <span class="result-icon">🎬</span>
+              <h3>Titles</h3>
+            </div>
+
+            <button
+              class="copy-all"
+              data-target="titles">
+              Copy
+            </button>
+          </div>
+
+          <div id="titles"></div>
+
+        </article>
+
+
+        <!-- CAPTIONS -->
+        <article class="result-card">
+
+          <div class="result-header">
+
+            <div>
+              <span class="result-icon">📝</span>
+              <h3>Captions</h3>
+            </div>
+
+            <button
+              class="copy-all"
+              data-target="captions">
+              Copy
+            </button>
 
           </div>
 
+          <div id="captions"></div>
+
+        </article>
+
+
+        <!-- DESCRIPTION -->
+        <article class="result-card wide">
+
+          <div class="result-header">
+
+            <div>
+              <span class="result-icon">📄</span>
+              <h3>Description</h3>
+            </div>
+
+            <button
+              class="copy-all"
+              data-target="description">
+              Copy
+            </button>
+
+          </div>
+
+          <div
+            id="description"
+            class="description-box">
+          </div>
+
+        </article>
+
+
+        <!-- HASHTAGS -->
+        <article class="result-card">
+
+          <div class="result-header">
+
+            <div>
+              <span class="result-icon">#️⃣</span>
+              <h3>Hashtags</h3>
+            </div>
+
+            <button
+              class="copy-all"
+              data-target="hashtags">
+              Copy
+            </button>
+
+          </div>
+
+          <div
+            id="hashtags"
+            class="tag-container">
+          </div>
+
+        </article>
+
+
+        <!-- KEYWORDS -->
+        <article class="result-card">
+
+          <div class="result-header">
+
+            <div>
+              <span class="result-icon">🔎</span>
+              <h3>Keywords</h3>
+            </div>
+
+            <button
+              class="copy-all"
+              data-target="keywords">
+              Copy
+            </button>
+
+          </div>
+
+          <div
+            id="keywords"
+            class="tag-container">
+          </div>
+
+        </article>
+
+
+        <!-- HOOKS -->
+        <article class="result-card">
+
+          <div class="result-header">
+
+            <div>
+              <span class="result-icon">🔥</span>
+              <h3>Hooks</h3>
+            </div>
+
+            <button
+              class="copy-all"
+              data-target="hooks">
+              Copy
+            </button>
+
+          </div>
+
+          <div id="hooks"></div>
+
+        </article>
+
+
+        <!-- THUMBNAILS -->
+        <article class="result-card">
+
+          <div class="result-header">
+
+            <div>
+              <span class="result-icon">🖼️</span>
+              <h3>Thumbnail Text</h3>
+            </div>
+
+            <button
+              class="copy-all"
+              data-target="thumbnail">
+              Copy
+            </button>
+
+          </div>
+
+          <div id="thumbnail"></div>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- FEATURES -->
+    <section id="features" class="features-section">
+
+      <div class="section-heading">
+
+        <span>WHY ANIBOOST?</span>
+
+        <h2>Everything Anime Creators Need</h2>
+
+        <p>
+          Simple tools designed to speed up your content workflow.
+        </p>
+
+      </div>
+
+
+      <div class="feature-grid">
+
+        <div class="feature">
+          <div>⚡</div>
+          <h3>Fast</h3>
+          <p>
+            Generate multiple content ideas in seconds.
+          </p>
+        </div>
+
+
+        <div class="feature">
+          <div>🎯</div>
+          <h3>Creator Focused</h3>
+          <p>
+            Built specifically for anime content creators.
+          </p>
+        </div>
+
+
+        <div class="feature">
+          <div>📱</div>
+          <h3>Mobile Friendly</h3>
+          <p>
+            Create content comfortably from your phone.
+          </p>
+        </div>
+
+
+        <div class="feature">
+          <div>🔒</div>
+          <h3>Private</h3>
+          <p>
+            Your inputs stay inside your browser.
+          </p>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+    <section id="about" class="about-section">
+
+      <div class="about-card">
+
+        <span>ABOUT ANIBOOST</span>
+
+        <h2>
+          Create more.
+          <span>Boost smarter.</span>
+        </h2>
+
+        <p>
+          AniBoost is a creator-focused toolkit designed
+          to help anime editors and YouTube creators
+          spend less time thinking about metadata and
+          more time creating.
+        </p>
+
+        <a href="#generator">
+          Try AniBoost →
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer>
+
+    <div class="footer-logo">
+      ⚡ AniBoost
+    </div>
+
+    <p>
+      Built for anime creators.
+    </p>
+
+    <p>
+      © <span id="year"></span> AniBoost
+    </p>
+
+  </footer>
+
+
+  <div id="toast" class="toast">
+    Copied!
+  </div>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>
 
           <div class="input-group">
 
